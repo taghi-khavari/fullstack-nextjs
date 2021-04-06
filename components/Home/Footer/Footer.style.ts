@@ -18,7 +18,7 @@ const useStyle = makeStyles((theme) => ({
       zIndex: 10,
     },
     "& p": {
-      color: theme.palette.common.custom.text.grayLight,
+      color: theme.palette.custom.text.grayLight,
     },
     "& .MuiGrid-spacing-xs-3": {
       margin: "0 auto",

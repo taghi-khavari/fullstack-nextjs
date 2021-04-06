@@ -85,7 +85,7 @@ export default function AddPeople({ onClose, onAddPerson, isEdited, person }) {
               />
             ) : (
               <UserIcon
-                color={theme.palette.common.custom.blue.dark}
+                color={theme.palette.custom.blue.dark}
                 width={50}
                 height={50}
               />
@@ -94,7 +94,7 @@ export default function AddPeople({ onClose, onAddPerson, isEdited, person }) {
               <PenIcon
                 width={12}
                 height={12}
-                color={theme.palette.common.custom.blue.dark}
+                color={theme.palette.custom.blue.dark}
               />
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function AddPeople({ onClose, onAddPerson, isEdited, person }) {
             >
               <div className={cs.garbageWrapper}>
                 <GarbageIcon
-                  color={theme.palette.common.custom.red.dark}
+                  color={theme.palette.custom.red.dark}
                   width={12}
                   height={12}
                 />

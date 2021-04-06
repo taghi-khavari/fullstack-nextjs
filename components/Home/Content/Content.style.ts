@@ -1,6 +1,7 @@
+import { Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles((theme: Theme) => ({
   root: {
     padding: "3rem",
   },

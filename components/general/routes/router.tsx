@@ -8,11 +8,11 @@ export default function MainMenu(props) {
 
   return (
     <List className={cs.listRoot}>
-      {routes.map(({ id, route, text }) => (
+      {routes.map(({ id, url, text }) => (
         <ListItem
           button
           key={id}
-          onClick={() => router.push(route)}
+          onClick={() => router.push(url)}
           className={cs.menuItem}
         >
           <ListItemText primary={text} />

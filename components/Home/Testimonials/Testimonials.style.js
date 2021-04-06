@@ -28,12 +28,12 @@ const useStyle = makeStyles((theme) => ({
     fontSize: "1.1rem",
   },
   title: {
-    color: theme.palette.common.custom.text.grayLight,
+    color: theme.palette.custom.text.grayLight,
     fontSize: "0.8rem",
     marginTop: 5,
   },
   comment: {
-    color: theme.palette.common.custom.text.grayDark,
+    color: theme.palette.custom.text.grayDark,
     fontSize: "0.9rem",
     marginTop: "1rem",
   },
@@ -51,7 +51,7 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   purpleBg: {
-    background: theme.palette.common.custom.purple.light,
+    background: theme.palette.custom.purple.light,
   },
 }));
 

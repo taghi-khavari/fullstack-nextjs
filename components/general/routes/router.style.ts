@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core";
 const useStyle = makeStyles((theme) => ({
   listRoot: {
     display: "flex",
-    flexDirection: (props) => (props?.isMobile ? "column" : "row"),
+    flexDirection: (props: { isMobile: boolean }) =>
+      props?.isMobile ? "column" : "row",
     minWidth: 300,
   },
   menuItem: {

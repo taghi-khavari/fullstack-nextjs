@@ -1,13 +1,21 @@
 import { Grid } from "@material-ui/core";
 import useStyle from "./Content.style";
 
+interface IContentRowProps {
+  imageFirst?: boolean;
+  src: string;
+  alt?: string;
+  title: string;
+  description: string;
+}
+
 export default function ContentRow({
   imageFirst,
   src,
   alt,
   title,
   description,
-}) {
+}: IContentRowProps) {
   const cs = useStyle();
 
   return (

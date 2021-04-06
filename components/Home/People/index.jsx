@@ -92,7 +92,7 @@ export default function People(props) {
       </Button>
       <div className={cs.garbageWrapper} onClick={handleDelete}>
         <GarbageIcon
-          color={theme.palette.common.custom.red.dark}
+          color={theme.palette.custom.red.dark}
           width={isMobile ? 15 : 20}
           height={isMobile ? 15 : 20}
         />

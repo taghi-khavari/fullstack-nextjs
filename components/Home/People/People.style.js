@@ -42,12 +42,12 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 700,
   },
   title: {
-    color: theme.palette.common.custom.text.grayLight,
+    color: theme.palette.custom.text.grayLight,
     fontSize: "0.7rem",
     marginTop: 5,
   },
   details: {
-    color: theme.palette.common.custom.text.grayLight,
+    color: theme.palette.custom.text.grayLight,
     fontSize: "0.7rem",
     marginTop: 20,
   },
@@ -66,19 +66,19 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   mainAdd: {
-    background: theme.palette.common.custom.purple.light,
-    color: theme.palette.common.custom.purple.dark,
+    background: theme.palette.custom.purple.light,
+    color: theme.palette.custom.purple.dark,
     "&:hover": {
-      background: theme.palette.common.custom.purple.dark,
-      color: theme.palette.common.custom.purple.light,
+      background: theme.palette.custom.purple.dark,
+      color: theme.palette.custom.purple.light,
     },
   },
   mainEdit: {
-    background: theme.palette.common.custom.yellow.light,
-    color: theme.palette.common.custom.yellow.dark,
+    background: theme.palette.custom.yellow.light,
+    color: theme.palette.custom.yellow.dark,
     "&:hover": {
-      background: theme.palette.common.custom.yellow.dark,
-      color: theme.palette.common.custom.yellow.light,
+      background: theme.palette.custom.yellow.dark,
+      color: theme.palette.custom.yellow.light,
     },
   },
   editBtn: {
@@ -92,7 +92,7 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     display: "none",
-    background: theme.palette.common.custom.blue.light,
+    background: theme.palette.custom.blue.light,
   },
   selectBtn: {
     position: "absolute",
@@ -100,7 +100,7 @@ const useStyle = makeStyles((theme) => ({
     height: 20,
     left: 20,
     top: 20,
-    border: `1px solid ${theme.palette.common.custom.text.grayLight}`,
+    border: `1px solid ${theme.palette.custom.text.grayLight}`,
     cursor: "pointer",
     borderRadius: "50%",
     background: ({ selected }) =>
@@ -123,7 +123,7 @@ const useStyle = makeStyles((theme) => ({
     width: 40,
     height: 40,
     borderRadius: "50%",
-    background: theme.palette.common.custom.red.light,
+    background: theme.palette.custom.red.light,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -160,9 +160,7 @@ const useStyle = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     background: ({ img }) =>
-      !!img
-        ? theme.palette.common.white
-        : theme.palette.common.custom.blue.light,
+      !!img ? theme.palette.common.white : theme.palette.custom.blue.light,
   },
 }));
 

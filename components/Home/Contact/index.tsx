@@ -5,18 +5,19 @@ import {
   MenuItem,
   Select,
   TextField,
+  Theme,
   useMediaQuery,
 } from "@material-ui/core";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
-import Title from "../../../components/general/Title";
+import Title from "../../general/Title";
 import useStyle from "./Contact.style";
 
 export default function Contact() {
   const cs = useStyle();
   const { register, handleSubmit, control } = useForm();
   const onSubmit = (data) => console.log("form data is: ", data);
-  const downSM = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const downSM = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   return (
     <>
       <div className={classNames(cs.contactRoot, "container")}>

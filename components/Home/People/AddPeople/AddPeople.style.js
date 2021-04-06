@@ -29,7 +29,7 @@ const useStyle = makeStyles((theme) => ({
   avatarBg: {
     width: 100,
     height: 100,
-    background: theme.palette.common.custom.blue.light,
+    background: theme.palette.custom.blue.light,
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",
@@ -43,7 +43,7 @@ const useStyle = makeStyles((theme) => ({
   editIcon: {
     width: 25,
     height: 25,
-    background: theme.palette.common.custom.blue.light,
+    background: theme.palette.custom.blue.light,
     boxShadow: theme.shadows[9],
     display: "flex",
     justifyContent: "center",
@@ -78,7 +78,7 @@ const useStyle = makeStyles((theme) => ({
     width: 25,
     height: 25,
     borderRadius: "50%",
-    background: theme.palette.common.custom.red.light,
+    background: theme.palette.custom.red.light,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -90,7 +90,7 @@ const useStyle = makeStyles((theme) => ({
     cursor: "pointer",
     "& span": {
       fontSize: "0.8rem",
-      color: theme.palette.common.custom.red.dark,
+      color: theme.palette.custom.red.dark,
     },
   },
 }));

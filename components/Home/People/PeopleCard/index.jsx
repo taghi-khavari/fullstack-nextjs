@@ -39,7 +39,7 @@ export default function PeopleCard({
       <Card className={cs.cardRoot} elevation={5} onClick={handleShowProfile}>
         <div className={cs.editBtn} onClick={onEdit}>
           <PenIcon
-            color={theme.palette.common.custom.blue.dark}
+            color={theme.palette.custom.blue.dark}
             width={10}
             height={10}
           />
@@ -59,7 +59,7 @@ export default function PeopleCard({
               src={img}
               height="100%"
               width="100%"
-              color={theme.palette.common.custom.blue.dark}
+              color={theme.palette.custom.blue.dark}
             />
           </div>
           <div className={cs.description}>

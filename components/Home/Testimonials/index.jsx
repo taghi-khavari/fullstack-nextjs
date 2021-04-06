@@ -27,7 +27,7 @@ export default function Testimonials() {
   const actions = (
     <div className={classNames(cs.iconWrapper, cs.purpleBg)}>
       <ArrowRightIcon
-        color={theme.palette.common.custom.purple.dark}
+        color={theme.palette.custom.purple.dark}
         width={isMobile ? 15 : 24}
         height={isMobile ? 15 : 24}
       />
