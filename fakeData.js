@@ -33,58 +33,6 @@ export const testimonials = [
   },
 ];
 
-export const Peoples = [
-  {
-    id: 0,
-    name: "Frank Ltarnam",
-    title: "CEO",
-    img: "/assets/people/gaetan-houssin.jpg",
-    description: "this is the description",
-  },
-  {
-    id: 1,
-    name: "Bob Shefley",
-    title: "UI/UX Designer",
-    img: "/assets/people/nicolas-lebarreau.jpg",
-    description: "this is the description",
-  },
-  {
-    id: 2,
-    name: "Jason Stewars",
-    title: "Full-Stack Developer",
-    img: "/assets/people/jerome-mahuet.jpg",
-    description: "this is the description",
-  },
-  {
-    id: 3,
-    name: "Sabrina Rachel",
-    title: "Marketing",
-    img: "/assets/people/manuela-faveri.jpg",
-    description: "this is the description",
-  },
-  {
-    id: 4,
-    name: "Marissa Lawren",
-    title: "Customer Support",
-    img: "/assets/people/darlene-chabrat.jpg",
-    description: "this is the description",
-  },
-  {
-    id: 5,
-    name: "Romane Regad",
-    title: "Jr UI/UX Designer",
-    img: "/assets/people/romane-regad.jpg",
-    description: "this is the description",
-  },
-  {
-    id: 6,
-    name: "Tania Ferreira",
-    title: "Business Analyst",
-    img: "/assets/people/tania-ferreira.jpg",
-    description: "this is the description",
-  },
-];
-
 export const Customers = [
   {
     id: 0,

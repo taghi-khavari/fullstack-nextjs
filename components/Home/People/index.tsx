@@ -3,30 +3,41 @@ import {
   Dialog,
   Grid,
   Paper,
+  Theme,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
 import classNames from "classnames";
-import { useState } from "react";
-import CTA from "../../../components/general/CTA";
+import { useEffect, useState } from "react";
+import { IPerson } from "../../../types/model";
+import CTA from "../../general/CTA";
 import CancelIcon from "../../svg/CancelIcon";
 import GarbageIcon from "../../svg/GarbageIcon";
 import HappyFaceIcon from "../../svg/HappyFaceIcon";
-import { Peoples } from "../../../fakeData";
 import AddPeople from "./AddPeople";
 import useStyle from "./People.style";
 import PeopleCard from "./PeopleCard";
 
-export default function People(props) {
+interface IProps {
+  peoples: IPerson[];
+}
+
+export default function People({ peoples }: IProps) {
   const [editOn, setEditOn] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [persons, setPersons] = useState(Peoples);
+  const [persons, setPersons] = useState<IPerson[]>([]);
   const [selectedPersons, setSelectedPersons] = useState([]);
-  const [editPerson, setEditPerson] = useState();
+  const [editPerson, setEditPerson] = useState<IPerson | null>(null);
 
   const cs = useStyle();
   const theme = useTheme();
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
+
+  useEffect(() => {
+    setPersons(peoples);
+  }, [peoples]);
 
   const handleCancel = () => {
     setEditOn(false);
@@ -57,21 +68,59 @@ export default function People(props) {
     }
   };
 
-  const handleAddPerson = (person) => {
-    if (!!editPerson) {
-      // first: remove the edited person from the list
-      setPersons((oldPersons) =>
-        oldPersons.filter((people) => people.id !== editPerson.id)
-      );
-    }
+  const handleResult = (_person: IPerson) => {
+    setPersons((values) => {
+      const isEdited = values.find((person) => person.id === _person.id);
+      if (isEdited) {
+        return values.map((person) =>
+          person.id === _person.id ? _person : person
+        );
+      } else {
+        return [...values, _person];
+      }
+    });
+  };
 
-    setPersons((oldPersons) => [
-      ...oldPersons,
-      {
-        ...person,
-        id: oldPersons.length + 1,
+  const handleAddPerson = (person: IPerson) => {
+    if (!!editPerson) {
+      handleEditPerson({ id: editPerson?.id, ...person });
+      return;
+    }
+    const _person = {
+      ...person,
+      id: new Date().toISOString(),
+    };
+
+    fetch("/api/peoples", {
+      method: "POST",
+      body: JSON.stringify({
+        person: _person,
+      }),
+      headers: {
+        "Content-Type": "application/json",
       },
-    ]);
+    })
+      .then((res) => res.json())
+      .then(handleResult)
+      .catch(console.log);
+
+    setEditPerson(null);
+    setDialogOpen(false);
+  };
+
+  const handleEditPerson = (person: IPerson) => {
+    fetch("/api/peoples", {
+      method: "PUT",
+      body: JSON.stringify({
+        person,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then(handleResult)
+      .catch(console.log);
 
     setEditPerson(null);
     setDialogOpen(false);

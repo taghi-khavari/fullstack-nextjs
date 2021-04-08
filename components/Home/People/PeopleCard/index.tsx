@@ -1,10 +1,19 @@
 import { Card, Dialog, Grid, useTheme } from "@material-ui/core";
 import { useState } from "react";
+import { IPerson } from "../../../../types/model";
 import AvatarIcon from "../../../svg/AvatarIcon";
 import CheckedIcon from "../../../svg/CheckedIcon";
 import PenIcon from "../../../svg/PenIcon";
 import useStyle from "../People.style";
 import ViewProfile from "../ViewProfile";
+
+interface IProps {
+  person: IPerson;
+  selected: boolean;
+  activateSelect: boolean;
+  handleSelect: (id: string) => void;
+  handleEdit: (person: IPerson) => void;
+}
 
 export default function PeopleCard({
   person,
@@ -12,9 +21,9 @@ export default function PeopleCard({
   activateSelect,
   handleSelect,
   handleEdit,
-}) {
+}: IProps) {
   const [openView, setOpenView] = useState(false);
-  const { img, alt, name, title, id } = person;
+  const { img, name, title, id } = person;
   const cs = useStyle({ selected, activateSelect, img });
   const theme = useTheme();
 
